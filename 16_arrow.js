@@ -26,7 +26,7 @@ console.log(this);
 
 function warning(name) {
     console.log(this.name); 
-    // In a regular function, `this` does not refer to the enclosing object/context
+    // In a regular function, `this` does not works
 }
 warning("MMalam");
 
@@ -46,7 +46,7 @@ const add = (n1, n2) => {
 };
 console.log(add(12, 13));
 
-// Shorthand arrow function with implicit return
+// Shorthand arrow function useful in react
 const display = (myName) => myName;
 console.log(display("Mutee"));
 
