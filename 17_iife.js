@@ -5,12 +5,12 @@
 
 // Syntax: (function definition)(execution), arguments can also be passed during execution
 
-// Named IIFE
+// Named IIFE        -->     asked in interview
 (function chai() {
     console.log(`DB CONNECTED`);
 })(); // Always terminate IIFE with a semicolon to avoid conflicts with other statements
 
-// Parameterized arrow function IIFE
+// Parameterized arrow function IIFE     -->     asked in interview
 ((username) => {
     console.log(`DB CONNECTED ${username}`);
 })("Mutee");
