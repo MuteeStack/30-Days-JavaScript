@@ -20,7 +20,7 @@ for(const key in myHeros){
                         // so that's why it is an object type 
 }
 
-
+// We cannot apply forin on maps
 const map = new Map()
 map.set("Pak" , "Pakistan")
 map.set("Fr" , "france")
