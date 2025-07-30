@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>Dom Learning</title>
+    <style>
+        .bg-black
+    {
+        background-color: rgb(192, 114, 12);
+    }
+    </style>
+</head>
+<body class="bg-black">
+    <div >
+        <h1 id="firstHeading" class="title">DOM Learning on Chai aur code<span style="display: none;">This is invisble only visible in innerHtml and innerTe</span></h1>
+        <p>Lorem ipsum dolor sit amet consectetur. </p>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2 >Lorem ipsum dolor sit.</h2>
+        <h3>Lorem ipsum dolor sit.</h3>
+        <h4>Lorem ipsum dolor sit amet, consectetur adipisicing.</h4>
+        <input type="password" name="" id="">
 
+        <ul>
+            <li class="allsame">one</li>
+            <li class="allsame">two</li>
+            <li class="allsame">three</li>
+            <li class="allsame">four</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<!-- Open google and go to any website and open console
+inside console write console.log(window.document ) or console.log(document)  
+ want to sccess all properties console.dir(document) -->
+
+
+
+ <!-- document.link -->
+<!-- document.links[2] -->
+ <!-- document.getElementById("firstHeading") -->
+ <!-- document.getElementById("firstHeading").innerHTML = "<h1>Chai aur Code</h1>" -->
+
+ <!-- document.getElementById("firstHeading").id -->
+
+   <!-- document.getElementById("firstHeading").class  
+    // we cannot use .class we have to use class name here  -->
+
+   <!-- document.getElementById("firstHeading").className -->
+
+   <!-- document.getElementById("firstHeading").getAttribute("id") -->
+
+    <!-- document.getElementById("firstHeading").getAttribute("id") -->
+
+     <!-- document.getElementById("firstHeading").setAttribute("class" , "happy title") 
+      // this will overwrite the  title basically-->
+
+      <!-- const  title = document.getElementById("firstHeading")
+       // We can also save it in a variable and then use the variable-->
+
+      <!-- title.style.backgroundColor = "green" -->
+
+      <!-- title.style.borderRadius = "15px" -->
+
+      <!-- title.style.padding="15px" -->
+
+
+
+      <!-- How to get content from here -->
+
+      <!-- title.innerText
+       // this will only give us visible content if we hide using display: none css property -->
+
+  <!-- title.textContent  
+   // this will also give us the invisible content   -->
+
+   <!-- title.innerHtml 
+    // also give us the inner tags like span tag inside the div tag -->
+
+
+    <!-- we have so many other selectors like getElementByClassName , querrySelector , querrySelectorAll e.t.c -->
+
+<!-- 
+
+// querySelector select only first element of that tag or class or id
+    document.querySelector("h2")  // This will give us only first firstHeading
+
+    document.querySelector("#firstHeading")
+
+    document.querySelector(".title") -->
+
+    <!-- document.querySelector("input")
+
+    document.querySelector("input[type=password]") -->
+
+
+    <!-- document.querySelector("ul") -->
+
+     <!--  const myul = document.querySelector("ul") -->
+
+       <!-- // we can also run further queries on this myul 
+        like myul.querySelector("li") // this will give us first list -->
+
+        <!-- const turnGreen = myul.querySelector("li") -->
+
+        <!-- turnGreen.style.backgroundColor = "green" -->
+<!-- turnGreen.innerText = "Green Color" -->
+
+
+
+<!-- querySelectorAll selects all the elements of that tag or id or class
+ document.querySelectorAll("li")
+ the value this returns is not pure array it is nodelist
+ remember nodelist and array are not pure arrays -->
+
+ <!-- const tempList = document.querySelectorAll("li") -->
+
+ <!-- tempList.style.color = "green" //this will not work since it is a nodelist so
+  templist[0].style.color = "green" //this will work -->
+
+  <!-- const myh1 = document.querySelectorAll("h1") -->
+
+  <!-- myh1.style.color = "green"   //still you cannot apply this this is still a nodelist-->
+
+  <!-- myh1[0].style.color = "green"  //this will work we have to give  -->
+
+
+
+  <!-- How to use foreach in the nodelist-->
+  <!-- const tempList = document.querySelectorAll("li") -->
+   <!-- tempList.forEach((l) => l.style.backgroundColor = "green") -->
+
+   <!-- In htmlcollection there is no foreach loop so we convert it into array
+     by storing html collection in an variable and the converting it into array using array.from(varname)-->
+
+     <!-- document.getElementsByClassName("allsame") this give us html collection which even dont have foreach loop -->
+
+     <!-- const tempList = document.getElementsByClassName("allsame") -->
+
+     <!-- const tempArray = Array.from(tempList) -->
+
+     <!-- now you can apply foreach and array methods -->
+
+     <!-- tempArray.forEach((li) => li.style.color = "white") -->
