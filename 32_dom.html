@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
 
+</body>
+<script>
+
+
+     //How to add an element
+
+    //first way
+    //This will also Add element but it is not optimized way
+    function addElem(langName){
+            const li = document.createElement("li")
+            li.innerText = `${langName}`
+            document.querySelector("ul").appendChild(li)
+    }
+    addElem("MongoDb")
+
+    //second way
+    //How to add an element making function optimized way
+    function addElement(langName){
+        const li = document.createElement("li")
+        const text = document.createTextNode(langName)
+        li.appendChild(text)
+        document.querySelector("ul").appendChild(li)
+    }
+    addElement("Python")
+
+    //How to edit the element
+    // first way
+    const newEdit = document.querySelector("li:nth-child(1)")
+    // newEdit.innerHTML = "Mojo"
+
+    //second way
+    const newName = document.createElement("li")
+    newName.textContent = "NodeJs"
+    newEdit.replaceWith(newName)
+
+    //third way
+    const newSelect = document.querySelector("li:last-child")
+    newSelect.outerHTML = "<li>TypeScript</li>"
+
+
+    
+    // How to remove the element
+    const removeElement = document.querySelector("li:first-child")
+    removeElement.remove()
+
+
+
+
+
+
+</script>
+</html>
