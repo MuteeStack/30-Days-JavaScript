@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Changer</title>
+  <style>
+    .canvas {
+      margin: 20px;
+    }
+
+    .button {
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: 2px solid #000;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    #Black {
+      background-color: black;
+    }
+
+    #Grey {
+      background-color: grey;
+    }
+
+    #Blue {
+      background-color: blue;
+    }
+
+    #Green {
+      background-color: green;
+    }
+
+    #Yellow {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <h2>Please Select the color </h2>
+    <span class="button" id="Black"></span>
+    <span class="button" id="Grey"></span>
+    <span class="button" id="Blue"></span>
+    <span class="button" id="Green"></span>
+    <span class="button" id="Yellow"></span>
+  </div>
+</body>
+<script>
+  const body = document.querySelector('body')
+  const buttons = document.querySelectorAll('.button')
+  buttons.forEach(
+    function(buttons){
+      buttons.addEventListener('click' , function(e){
+            console.log(e)
+            console.log(e.target)
+
+            if(e.target.id === 'Black'){
+              body.style.backgroundColor = "black"
+            }
+            if(e.target.id === 'Grey'){
+              body.style.backgroundColor = "grey"
+            }
+            if(e.target.id === 'Green'){
+              body.style.backgroundColor = "green"
+            }
+            if(e.target.id === 'Blue'){
+              body.style.backgroundColor = "blue"
+            }
+            if(e.target.id === 'Yellow'){
+              body.style.backgroundColor = "yellow"
+            }
+      })
+    }
+  )
+</script>
+</html>
 
