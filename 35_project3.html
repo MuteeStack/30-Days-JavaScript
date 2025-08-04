@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Digital Clock</title>
+  <style>
+    body {
+      background-color: blanchedalmond;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: darkorange;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    #time {
+      width: 120px;
+      height: 70px;
+      background: darkorange;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="color:rgb(30, 23, 13);">Digital Clock</h1>
+    <div id="time"></div>
+  </div>
+
+  <script>
+    const clock = document.getElementById('time');
+
+    setInterval(() => {
+      const date = new Date();
+      clock.textContent = date.toLocaleTimeString();
+    }, 1000);
+  </script>
+</body>
+</html>
 
