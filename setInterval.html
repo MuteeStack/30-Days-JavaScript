@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+<body>
+    <h2>My name is Mutee Ur Rehman</h2>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    
+</body>
+<script>
+
+let startIt;
+document.querySelector('#start').addEventListener('click' , function(){
+         startIt = setInterval(function(){
+        const p = document.createElement("p")
+        p.innerHTML = 'I am learning from chai aur code'
+        document.body.appendChild(p)
+    } , 1000)
+    })
+    
+
+
+
+    document.querySelector('#stop').addEventListener('click' , function(){
+        clearInterval(startIt)
+    })
+</script>
+</html>
