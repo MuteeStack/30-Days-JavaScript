@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keys Special</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    #unique {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    #insert {
+      display: flex;
+      justify-content: center;
+    }
+
+    table {
+      background-color: #ffffff;
+      color: #333;
+      border-radius: 5px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      animation: fadeIn 0.3s ease-in-out;
+      min-width: 320px;
+      text-align: center;
+    }
+
+    td {
+        border-radius: 5px;
+      padding: 15px 20px;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    tr:nth-child(1) {
+      border-radius: 5px;
+      background-color: #00c6ff;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    tr:not(:first-child):hover td {
+      background-color: #e3f2fd;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div id="unique">Please Press any key to see Magic</div>
+  <div id="insert"></div>
+
+  <script>
+    const insert = document.querySelector('#insert');
+
+    document.addEventListener('keydown', function(e) {
+    //   const keyName = e.key === ' ' ? 'Space' : e.key;
+
+      insert.innerHTML = `
+        <table>
+          <tr>
+            <td><strong>Key Code</strong></td> 
+            <td><strong>Key Name</strong></td>
+            <td><strong>Key Value</strong></td>
+          </tr>    
+          <tr>
+            <td>${e.keyCode}</td>  
+            <td>${e.code}</td>
+            <td>${e.key === ' ' ? 'Space' : e.key}</td>
+          </tr>
+        </table>
+      `;
+    });
+  </script>
+</body>
+</html>
+ 
