@@ -1,0 +1,57 @@
+<!-- I past time we use XHR xmlhttprequest it is very powerful still used today  
+ xhr is generally based on ajax (async javascript and xml) based it dont have things like aysnc await but it has  constructor or states for example ready state 
+ 0=unsent You didn't send any request 
+ 1=open you send the request only 
+ 2=headers_recieved which means that they  have recived your header but not data or anything else
+ 3=loading which do that how much of data has stored or data is compeletly stored or not it is also done now as well but nowadays it is not done throught these numbers done independently 
+ 4=done operation has been done now dataor request has been send from our side now the reciever have to manage the data --> 
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body style="background-color: rgb(70, 66, 66);">
+    
+ </body>
+ <script>
+    // sending xml ajax reuest old method but we must have knowledge
+    let requestURL = 'https://api.github.com/users/muteestack'
+    const xhr = new XMLHttpRequest()
+    let name;
+    let followers;
+    let picture;
+    xhr.open('GET' , requestURL) //open don't call itself you have to use .send
+     console.log(xhr.readyState)
+     xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        let data  = JSON.parse(this.responseText)   // you recive values from url in the form of string in most cases so we have to convert it into objects
+        if(xhr.readyState === 4){
+            console.log( data)
+
+            // assignment was given inorder to display the data
+            name = data.login
+            followers = data.followers
+            picture = data.avatar_url
+            console.log(name)
+            console.log(followers)
+            let Image = document.createElement('img')
+            let details = document.createElement('p')
+            details.innerHTML = `Name: ${name}  and Followers: ${followers}`
+            Image.src = picture
+
+            document.body.appendChild(Image)
+            document.body.appendChild(details)
+
+           
+        }
+     }
+
+   
+    xhr.send()
+    
+ </script>
+ </html>
