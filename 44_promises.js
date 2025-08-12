@@ -97,15 +97,3 @@ let promiseFive = new Promise(function(resolve , reject){
 
 // async usually wait for the work to be done it the work is done then it continues else it gives an error
 
-// async function getAllUsers(){
-//     try {
-//         const response = await fetch('https://jsonplaceholder.typicode.com/users')
-
-//         const data = await response.json()
-//         console.log(data);
-//     } catch (error) {
-//         console.log("E: ", error);
-//     }
-// }
-
-//getAllUsers()
