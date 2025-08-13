@@ -82,18 +82,52 @@ promiseFour
 
 // in databse operations people sometime use **ayns await** instead of .then as well to handle promisis there is no performance issue 
 
-
 let promiseFive = new Promise(function(resolve , reject){
-    setTimeout(function(){
-        let error2 = false
-        if(!error2){
-            resolve({name: 'Javascript' , code: '.js'})
+    setTimeout(() => {
+        let error = true
+        if(!error){
+            resolve({name: 'JS' , fileType: 'script.js'})
+        } else{
+            reject('Error occured')
         }
-        else{
-            reject('Error! You got an error')
-        }
-    },1000)
+    }, 1000);
 })
 
+// what is promise a thing to be happen in the future so we can handle it by async await and .then in aync await it first complete task then continues necessary in database operations
 // async usually wait for the work to be done it the work is done then it continues else it gives an error
 
+async function consumePromiseFive(){
+    try{
+          let response = await promiseFive
+    console.log(response)
+    } catch (errors){
+        console.log(errors)
+    }
+  
+}
+
+consumePromiseFive()
+
+
+
+// async function getAllUsers(){
+//     try {
+//          let response = await fetch('https://jsonplaceholder.typicode.com/users')
+//          let data = await response.json()   //this thing also take time so we have to make it await
+//         console.log(data)
+//     } catch (error) {
+//         console.log('Error: Unable to get users detail')
+//     }
+   
+// }
+
+// getAllUsers()
+
+fetch('https://api.github.com/users/muteestack')
+.then((user)=>  user.json())
+.then((userdata)=>{
+    console.log(userdata)
+})
+.catch((error) => console.log("Error"))
+
+// why we get fetch value first we will discuss it later on next file
