@@ -13,11 +13,11 @@ in order to make sevices to use again in the code reuseability
 
 ## parts of OOPs
 
-object literal // this means that we are literally taking object for example 2 literally means 2
+object literal // this means that we are literally taking object for example 2 literally means 2 the objects are just object literals
 
-constructor
-classes
-prototype
+-constructor (new keywork is genrally constructor helps to create new instances)
+-classes
+-prototype
 instances (new , this)
 
 ## 4 pillars
