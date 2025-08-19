@@ -13,10 +13,11 @@
 // ------------------------------Scene 2-----------------------
 // in this we injected a function into Array using Array.prototype.greetings then it will be only accessable to array because it is for array not in the path where they have to go
 
-let myName = ["Hello"]
 
+
+
+// let myName = ["Chai"]
 // console.log(myName.trueLength)
-
 
 let myObj = {
     username : "Mutee",
@@ -34,7 +35,7 @@ Array.prototype.greetings = function() {
     console.log("Welcome Back @GentleMen")
 }
 
-
+let myName = ["Mutee"]
 // myObj.greetings()
 myName.greetings()
 
@@ -70,10 +71,6 @@ teacher.__proto__ = user // this is prototypal inheritance and this method is ou
 
 // Modern Sytax now being used 
 Object.setPrototypeOf(TAsupport , teacher)  //TAsupport will have access to properties of teacher
-
-
-
-
 
 
 
