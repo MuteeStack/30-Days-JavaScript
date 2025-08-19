@@ -69,9 +69,8 @@ let TAsupport = {
 teacher.__proto__ = user // this is prototypal inheritance and this method is outdated we have now modern syntax
 
 
-// Modern Sytax now being used 
+// This Modern Sytax is now being used 
 Object.setPrototypeOf(TAsupport , teacher)  //TAsupport will have access to properties of teacher
-
 
 
 
