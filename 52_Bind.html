@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React{
+        constructor(){
+            this.library = 'React'
+            this.server = 'https://localhost:3000/'
+
+            // selecting the button and attaching event listener
+            document
+            .querySelector('button')
+            .addEventListener('click' , this.handleMe.bind(this))
+           
+            //  actually: bind() creates a *new function* where `this` 
+            // is permanently set to the current object (the instance created by "new React()").
+            // Without bind, inside handleMe() the `this` would refer to the button element,
+            // not the class instance. 
+            // So bind ensures `this` === React instance (the object "app").
+        }
+
+        // Requirement: whenever i create an object i get reference of the button 
+        // and when button is clicked we get a response
+        handleMe(){ 
+            // here, without bind: `this` would point to <button>
+            // but with bind: `this` points to the object "app" (React instance)
+            
+            console.log('Button Clicked')
+            console.log(this.server) // will log the server string because `this` is the class instance
+        }
+    }  
+
+    // creating an object of the class
+    // constructor runs and sets up the event listener
+    const app = new React()
+</script>
+</html>
 
