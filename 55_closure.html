@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
 
+</head>
+<body>
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+</body>
+
+<script>
+
+    // whenever we declare a function inside aother function then the inner function will have access to scope of outer function forex: variables
+    // this is called lexical scoping
+    function outer(){
+        let username = 'Mutee'
+        function inner(){
+            let pass = 'secret'
+            console.log('inner',username)
+            function innerTwo(){
+                console.log('innerTwo',pass)
+            }
+            innerTwo()
+        }
+        inner()
+    }
+
+    outer()
+
+
+
+ function first(){
+    let name = 'Mutee'    
+     function second(){
+     console.log(name)
+    } 
+    return second;  // return first will pass reference and end here  the second will not run
+                  // when this is done not only reference of second is passed but also of the outer function will be passed since here is lexical scoping
+}
+// first()
+// What happens when you call first()?
+// first() runs.
+// Inside it, name = "Mutee" is created.
+// second (the inner function) is defined, and then returned (not executed yet).
+// So first() itself does not print anything. It only gives you back the function second as a value.
+// You get the second function back, but don’t actually call it — so nothing happens.
+
+
+let jf = first()
+
+// Now, jf holds a reference to the second function (the one that was returned).
+// But here’s the cool part: when second was created, it closed over the variable name = "Mutee" from first.
+// 👉 That’s called a closure.
+// Even though first() has already finished running, the variable name is still remembered because second depends on it.
+// jf  is actually the function second
+
+
+jf()
+
+</script>
+<!-- Interview Practical Example of closure -->
+ <script>
+    // let org = document.getElementById('orange')
+    // org.addEventListener('click' , function(){
+    //     document.body.style.backgroundColor = 'orange'
+    // })
+    //  let gree = document.getElementById('green')
+    // gree.addEventListener('click' , function(){
+    //     document.body.style.backgroundColor = 'green'
+    // })
+
+    // What if i gave you an array of color and you have to create 500 button for the colors
+    // so u will be copy and pasting this code for like 
+
+    function clickHandler(color){
+            // the below line will change the color imediatly because clickHandler("orange") runs immediately when the page loads.
+
+            // document.body.style.backgroundColor = `${color}`
+
+            // if you have knowledge about lexical scoping and closure you will do this 
+            return function(){
+                     document.body.style.backgroundColor = `${color}`
+            }
+    }
+
+    document.getElementById('orange').onclick = clickHandler("orange")
+
+    // clickHandler("orange") runs immediately when the page loads.
+    // But instead of changing the color, it returns a function.
+    // That returned function (its reference) is assigned to the button’s .onclick.
+ </script>
+</html>
