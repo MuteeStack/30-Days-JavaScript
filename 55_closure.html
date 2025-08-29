@@ -76,9 +76,12 @@ jf()
     // so u will be copy and pasting this code for like 
 
     function clickHandler(color){
-            // the below line will change the color imediatly because clickHandler("orange") runs immediately when the page loads.
 
             // document.body.style.backgroundColor = `${color}`
+            // clickHandler("orange") runs immediately when the page loads.
+            //It sets the background color to orange right away.
+            // But clickHandler returns undefined, so the button’s .onclick becomes undefined.
+            // Result: the background is orange as soon as the script runs, but the button does nothing on click.
 
             // if you have knowledge about lexical scoping and closure you will do this 
             return function(){
@@ -88,8 +91,10 @@ jf()
 
     document.getElementById('orange').onclick = clickHandler("orange")
 
-    // clickHandler("orange") runs immediately when the page loads.
+    // now clickHandler("orange") runs immediately when the page loads.
     // But instead of changing the color, it returns a function.
     // That returned function (its reference) is assigned to the button’s .onclick.
+    //.onclick stores a reference to a function, not the result of calling it.
+    // That’s why when you click, the browser calls that function for you.
  </script>
 </html>
